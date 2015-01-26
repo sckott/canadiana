@@ -55,5 +55,6 @@ cearch <- function(q = NULL, au = NULL, ti = NULL, su = NULL, contributor = NULL
   args <- cacomp(list(q = q, au = au, ti = ti, su = su, contributor = contributor,
                       media = media, lang = lang, set = set, t = type, key = key,
                       pkey = pkey, df = df, dt = dt, sort = sort, fmt = "json"))
-  ca_GET(cabase(), page, args, ...)
+  res <- ca_GET(makeurl(cabase(), page), args, ...)
+  list(meta=get_meta(res), facet=parse_facet(res$facet), docs=res$docs)
 }

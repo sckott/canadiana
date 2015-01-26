@@ -1,14 +1,12 @@
-cabase <- function() "http://search.canadiana.ca/search"
+cabase <- function() "http://search.canadiana.ca"
 
-makeurl <- function(url, x) if(is.null(x)) url else paste0(url, "/", x)
+makeurl <- function(url, x) if(is.null(x)) paste0(url, "/search") else paste0(url, "/", x)
 
-ca_GET <- function(url, page, args, ...) {
-  res <- httr::GET(makeurl(url, page), query=args, ...)
+ca_GET <- function(url, args, ...) {
+  res <- httr::GET(url, query=args, ...)
   httr::stop_for_status(res)
   text <- httr::content(res, as = "text")
-  json <- jsonlite::fromJSON(text, simplifyVector = FALSE, simplifyDataFrame = TRUE)
-
-  list(meta=get_meta(json), facet=parse_facet(json$facet), docs=json$docs)
+  jsonlite::fromJSON(text, simplifyVector = FALSE, simplifyDataFrame = TRUE)
 }
 
 cacomp <- function (l) Filter(Negate(is.null), l)
