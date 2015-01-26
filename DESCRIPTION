@@ -1,8 +1,17 @@
 Package: canadiana
-Title: What the Package Does (one line, title case)
-Version: 0.0.0.9000
-Authors@R: person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph)
-Depends: R (>= 3.1.2)
-License: What license is it under?
-LazyData: true
+Title: Interact with Canadiana data
+Description: Interact with Canadiana data.
+Version: 0.0.1.99
+Date: 2015-01-26
+License: MIT + file LICENSE
+URL: https://github.com/sckott/canadiana
+BugReports: https://github.com/sckott/canadiana/issues
+Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
+    email = "myrmecocystus@gmail.com")
+LazyData: yes
+Roxygen: list(wrap = FALSE)
+Imports:
+    httr,
+    jsonlite
+Suggests:
+    roxygen2
