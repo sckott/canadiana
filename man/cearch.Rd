@@ -4,10 +4,34 @@
 \alias{cearch}
 \title{Search Canadiana}
 \usage{
-cearch(query, ...)
+cearch(q = NULL, au = NULL, ti = NULL, su = NULL, contributor = NULL,
+  media = NULL, lang = NULL, set = NULL, type = NULL, key = NULL,
+  pkey = NULL, df = NULL, dt = NULL, sort = NULL, page = NULL, ...)
 }
 \arguments{
-\item{query}{Query terms}
+\item{q}{(character) Query terms, full text field}
+
+\item{au}{(character) Author/creator names, full text field}
+
+\item{ti}{(character) Titles, full text field}
+
+\item{su}{(character) Subject headings/keywords, full text field}
+
+\item{contributor}{(character) Contributor code}
+
+\item{media}{(character) Media type, one of text, image, audio, video, data, or plaintext}
+
+\item{lang}{(character) Document language, a 3 letter code from ISO 693-3,
+\url{http://www-01.sil.org/iso639-3/codes.asp}}
+
+\item{set}{(character) Index subset}
+
+\item{type}{(character) Type of record, one of any, document, series, page, or
+default (document and series)}
+
+\item{key}{(character) Record unique key}
+
+\item{pkey}{(character) Record parent key}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
@@ -16,10 +40,34 @@ Search Canadiana
 }
 \examples{
 \dontrun{
-out <- cearch(query="railroads")
+out <- cearch(q="railroads")
 out$meta
 out$facet
 head(out$docs)
+
+# various search egs
+cearch("rail*")$meta
+cearch("rail yards")$meta
+cearch('"rail yards" -railway')$meta
+cearch('rail yard | car')$meta
+cearch('su:railroads')$meta
+cearch(su="railroads")$meta
+cearch(su="railroads", q="su:Newfoundland")$meta
+
+# By language
+cearch(lang="spa")$meta
+
+# By record type
+cearch(type="page")$meta
+
+# dates
+cearch(q="railroads", df=1800, dt=1820)$meta
+
+# sorting
+cearch(q="railroads", df=1800, dt=1820, sort="oldest")$docs
+
+# paging
+cearch(q="railroads", page=2)$meta
 }
 }
 

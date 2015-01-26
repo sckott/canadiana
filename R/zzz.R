@@ -1,7 +1,9 @@
 cabase <- function() "http://search.canadiana.ca/search"
 
-ca_GET <- function(url, args, ...) {
-  res <- httr::GET(url, query=args, ...)
+makeurl <- function(url, x) if(is.null(x)) url else paste0(url, "/", x)
+
+ca_GET <- function(url, page, args, ...) {
+  res <- httr::GET(makeurl(url, page), query=args, ...)
   httr::stop_for_status(res)
   text <- httr::content(res, as = "text")
   json <- jsonlite::fromJSON(text, simplifyVector = FALSE, simplifyDataFrame = TRUE)
