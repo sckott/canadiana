@@ -16,6 +16,10 @@
 #' default (document and series)
 #' @param key (character) Record unique key
 #' @param pkey (character) Record parent key
+#' @param df (character) Date from
+#' @param dt (character) Date to
+#' @param sort (character) Sort direction, one of oldest or newest
+#' @param page (integer) Page number
 #' @param ... Curl options passed on to \code{\link[httr]{GET}}
 #' @examples \dontrun{
 #' out <- cearch(q="railroads")

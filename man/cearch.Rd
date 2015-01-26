@@ -33,6 +33,14 @@ default (document and series)}
 
 \item{pkey}{(character) Record parent key}
 
+\item{df}{(character) Date from}
+
+\item{dt}{(character) Date to}
+
+\item{sort}{(character) Sort direction, one of oldest or newest}
+
+\item{page}{(integer) Page number}
+
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
 \description{
