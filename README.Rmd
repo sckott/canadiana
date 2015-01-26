@@ -1,0 +1,80 @@
+canadiana
+=======
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  warning = FALSE, 
+  message = FALSE,
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+`canadiana` is an R client for the Canadiana API
+
+* [Canadiana](http://search.canadiana.ca/) - _Search the digital collections of libraries, archives and museums from across Canada_
+* API docs: [http://search.canadiana.ca/support/api](http://search.canadiana.ca/support/api)
+
+## Install
+
+```{r eval=FALSE}
+install.packages("devtools")
+devtools::install_github("sckott/canadiana")
+```
+
+```{r}
+library("canadiana")
+```
+
+## Search for records
+
+```{r}
+out <- cearch(q="railroads")
+out$meta
+```
+
+```{r}
+out$facet
+```
+
+```{r}
+head(out$docs)
+```
+
+By language
+
+```{r}
+cearch(lang="spa")$meta
+```
+
+By record type
+
+```{r}
+cearch(type="page")$meta
+```
+
+Date delimit
+
+```{r}
+cearch(q="railroads", df=1800, dt=1820)$meta
+```
+
+Sorting
+
+```{r}
+cearch(q="railroads", df=1800, dt=1820, sort="oldest")$docs
+```
+
+Paging
+
+```{r}
+cearch(q="railroads", page=2)$meta
+```
+
+## Get single item
+
+```{r}
+item("oocihm.00001")
+```
+
