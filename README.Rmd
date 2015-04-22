@@ -10,6 +10,7 @@ knitr::opts_chunk$set(
 )
 ```
 
+[![Build Status](https://travis-ci.org/sckott/canadiana.svg)](https://travis-ci.org/sckott/canadiana)
 
 `canadiana` is an R client for the Canadiana API
 
@@ -68,7 +69,8 @@ cearch(q="railroads", df=1800, dt=1820, sort="oldest")$docs
 
 Paging
 
-```{r}
+```{r eval=FALSE}
+# FIX ME - paging doesn' work for some reason
 cearch(q="railroads", page=2)$meta
 ```
 

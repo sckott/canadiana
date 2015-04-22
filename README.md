@@ -3,6 +3,7 @@ canadiana
 
 
 
+[![Build Status](https://travis-ci.org/sckott/canadiana.svg)](https://travis-ci.org/sckott/canadiana)
 
 `canadiana` is an R client for the Canadiana API
 
@@ -104,7 +105,16 @@ out$facet
 #> 27  und     1
 #> 
 #> $collection
-#> NULL
+#>    coll count
+#> 1   gvp   235
+#> 3   ecl    84
+#> 5   wmh    49
+#> 7   nas    30
+#> 9   hbc    19
+#> 11  hfc    14
+#> 13  per    14
+#> 15  gvg     1
+#> 17  jsr     1
 #> 
 #> $media
 #>   format count
@@ -134,51 +144,58 @@ head(out$docs)
 #> 1 http://eco.canadiana.ca/view/oocihm.9_01123
 #> 2 http://eco.canadiana.ca/view/oocihm.8_06592
 #> 3 http://eco.canadiana.ca/view/oocihm.8_04941
-#> 4 http://eco.canadiana.ca/view/oocihm.8_04331
-#> 5 http://eco.canadiana.ca/view/oocihm.8_04367
-#> 6 http://eco.canadiana.ca/view/oocihm.8_06691
+#> 4 http://eco.canadiana.ca/view/oocihm.8_05079
+#> 5 http://eco.canadiana.ca/view/oocihm.8_06691
+#> 6 http://eco.canadiana.ca/view/oocihm.8_04331
 #>                                                                                                                                                                                                                                     subject
 #> 1 Railroads -- Canada., Railroads and state -- Canada., Canals -- Canada., Telegraph lines -- Canada., Chemins de fer -- Canada., Chemins de fer -- Politique gouvernementale -- Canada., Canaux -- Canada., Lignes télégraphiques -- Canada.
 #> 2                                                                                                                                                             Railroads -- Canada -- Periodicals., Chemins de fer -- Canada -- Periodicals.
 #> 3                Railroads -- Canada -- Time-tables -- Periodicals., Railroads -- United States -- Time-tables -- Periodicals., Chemins de fer -- Canada -- Horaires -- Périodiques., Chemins de fer -- États-Unis -- Horaires -- Périodiques.
-#> 4                                                    Railroads -- Canada -- Timetables -- Periodicals., Steamboats -- Canada -- Periodicals., Chemins de fer -- Canada -- Horaires -- Périodiques., Bateaux à vapeur -- Canada -- Périodiques.
-#> 5                                                                                  Railroads -- Canada -- Time-tables., Steamboats -- Canada -- Time-tables., Chemins de fer -- Canada -- Horaires., Bateaux à vapeur -- Canada -- Horaires.
-#> 6                                                                                                                                    Railroads -- Canada -- Timetables -- Periodicals., Chemins de fer -- Canada -- Horaires -- Périodiques.
+#> 4                                                                                                                                                              Railroads -- Canada -- Periodicals., Chemins de fer -- Canada -- Périodiques.
+#> 5                                                                                                                                    Railroads -- Canada -- Timetables -- Periodicals., Chemins de fer -- Canada -- Horaires -- Périodiques.
+#> 6                                                    Railroads -- Canada -- Timetables -- Periodicals., Steamboats -- Canada -- Periodicals., Chemins de fer -- Canada -- Horaires -- Périodiques., Bateaux à vapeur -- Canada -- Périodiques.
+#>   collection
+#> 1        gvp
+#> 2        per
+#> 3        per
+#> 4        per
+#> 5        per
+#> 6        per
 #>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     note
 #> 1 Title from title screen., Libraries from which the original issues have been borrowed are identified on the microfiche., In 1847, the Legislative Assembly appointed a Standing Committee on Railroads and Telegraphic Lines to investigate all petitions and bills presented to the House. This committee was reappointed each year thereafter until 1867. In 1852, the investigation into canals was added and the committee became the Standing Committee on Railroads, Canals and Telegraphic Lines. Cf. Bishop., "Printed by order of the Railway Committee.", Description based on: 1859., Bishop, O.B. Publications of the government of the Province of Canada, 1841-1867, p. 324, v. ; 25 cm.
 #> 2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          Ceased pub in 188-? Cf. Bibliothèque et Archives nationales du Québec., Title from caption., Title from title screen., Includes advertising matter., Issues reproduced: Vol. 2, no. 2 (Mar. 3, 1882), v. : ill.
 #> 3                                                                                                                                                                                                                         Began pub. in 1866; ceased with May 1869 issue. Cf. La presse québé coise des origines à nos jours., Title from cover., Title from title screen., Includes advertising matter., Issues reproduced: No. 33 (June 1867); no. 38 (Oct. 1867); no. 50 (Oct. 1868), "Giving the time-tables of the Grand Trunk Railway of Canada and of all railways connecting Canada and the United States.", Tables., Imprint varies., Description based on: No. 33 (June 1867), v. : maps ; 21 cm.
-#> 4                                                                                                                                                                                                                                                                                                                                                                                                                                    Title from title screen., '"Giving a facility to the means of Travelling for strangers ..."', Issues reproduced: Vol. 4, no. 5 (Sept. 2, 1858), Includes advertising matter., Title from caption., Description based on: Vol. 4, no. 5 (Sept. 2, 1858), v. ; 31 cm.
-#> 5                                                                                                                                                                                                                                                                                                                                                                                                                                                                         No. 1 (June 1, 1856)-, Title from title screen., Includes advertising matter., Issues reproduced: No. 1 (June 1, 1856)-no. 2 (July 1, 1856), Title from cover., 'After the Plan of the English "Bradshaw."', v. : map ; 17 cm.
-#> 6                                                                                                                                                                                                                                                                                                                                                                        Vol. 1, no. 1 (Oct. 11, 1880)-, Title from caption., Title from title screen., "Devoted to Raiway [sic], Commercial, Financial, Agricultural and Scientific Developments of our Day.", Imprint varies., Includes advertising matter., Issues reproduced: Vol. 1, no. 1 (Oct. 11, 1880); v. 12, no. 21 (May 25, 1891), v. : ill.
+#> 4                                                                                                                                                                                                                                                                                                                                          Ceased pub. in 1888? Cf. LAC., Title from title screen., Includes advertising matter., Issues reproduced: Vol. 2, no. 1 (Jan. 1887)-v. 3, no. 7 (July 1888); v. 3, no. 10 (Oct. 1888), Description based on: Vol. 2, no. 1 (Jan. 1887), "A Monthly Journal Devoted to Canadian Railway Interests.", Issues for May/June 1888 published together., v. ; 31 cm.
+#> 5                                                                                                                                                                                                                                                                                                                                                                        Vol. 1, no. 1 (Oct. 11, 1880)-, Title from caption., Title from title screen., "Devoted to Raiway [sic], Commercial, Financial, Agricultural and Scientific Developments of our Day.", Imprint varies., Includes advertising matter., Issues reproduced: Vol. 1, no. 1 (Oct. 11, 1880); v. 12, no. 21 (May 25, 1891), v. : ill.
+#> 6                                                                                                                                                                                                                                                                                                                                                                                                                                    Title from title screen., '"Giving a facility to the means of Travelling for strangers ..."', Issues reproduced: Vol. 4, no. 5 (Sept. 2, 1858), Includes advertising matter., Title from caption., Description based on: Vol. 4, no. 5 (Sept. 2, 1858), v. ; 31 cm.
 #>              key
 #> 1 oocihm.9_01123
 #> 2 oocihm.8_06592
 #> 3 oocihm.8_04941
-#> 4 oocihm.8_04331
-#> 5 oocihm.8_04367
-#> 6 oocihm.8_06691
+#> 4 oocihm.8_05079
+#> 5 oocihm.8_06691
+#> 6 oocihm.8_04331
 #>                                                              published
 #> 1                                     Toronto : J. Lovell, [1849-1862]
 #> 2                                     Montreal : H. Mott, [1881-188-?]
 #> 3                                 Montreal : M. Longmoore, [1866-1869]
-#> 4 Montreal : Pub. for the proprietor by H. Rose, [1855?-18-- or 19- -]
-#> 5           Toronto : Pub. for the Proprietor by MacLear, [1856-18--?]
-#> 6 Montreal : Railway and Steamboat Times Pub. Co., [1880-18-- or 19--]
+#> 4                               Toronto : W.B. Campbell, [1886?-1888?]
+#> 5 Montreal : Railway and Steamboat Times Pub. Co., [1880-18-- or 19--]
+#> 6 Montreal : Pub. for the proprietor by H. Rose, [1855?-18-- or 19- -]
 #>   identifier media
 #> 1    9_01123  text
 #> 2    8_06592  text
 #> 3    8_04941  text
-#> 4    8_04331  text
-#> 5    8_04367  text
-#> 6    8_06691  text
+#> 4    8_05079  text
+#> 5    8_06691  text
+#> 6    8_04331  text
 #>                                                                                       label
 #> 1 Proceedings of the Select Standing Committee on Railroads, Canals and Telegraph Lines ...
 #> 2                                                                           Railway journal
 #> 3                                                           The international railway guide
-#> 4                                                      Canadian railway and steamboat guide
-#> 5                           The Canada (monthly) general railway and steam navigation guide
-#> 6                                                           The railway and steamboat times
+#> 4                                                                              Railway life
+#> 5                                                           The railway and steamboat times
+#> 6                                                      Canadian railway and steamboat guide
 #>     type
 #> 1 series
 #> 2 series
@@ -190,9 +207,9 @@ head(out$docs)
 #> 1 Canada. Legislature. Legislative Assembly. Standing Committee on Railroads, Canals and Telegraph Lines., Proceedings of the Select Standing Committee on Railroads, Canals and Telegraph Lines ... .
 #> 2                                                                                                                                                                                    Railway journal .
 #> 3                                                                                                                                                                    The international railway guide .
-#> 4                                                                                                                                                               Canadian railway and steamboat guide .
-#> 5                                                                                                                                    The Canada (monthly) general railway and steam navigation guide .
-#> 6                                                                                                                                                                    The railway and steamboat times .
+#> 4                                                                                                                                                                                       Railway life .
+#> 5                                                                                                                                                                    The railway and steamboat times .
+#> 6                                                                                                                                                               Canadian railway and steamboat guide .
 #>   contributor
 #> 1      oocihm
 #> 2      oocihm
@@ -346,6 +363,17 @@ cearch(q="railroads", df=1800, dt=1820, sort="oldest")$docs
 #> 8                                                       Railroads - Rolling-stock, Railroads - Passenger - cars, Railroads - Employees, Canadian Pacific Railway Company, British Columbia
 #> 9                                                                         Railroads - Rolling-stock--Railroads - Passenger - cars--Railroads - Employees, Canadian Pacific Railway Company
 #> 10 Railroads - Rolling-stock, Railroads - Trains, Railroads - Passenger - cars, Railroad bridges, Kettle Valley Railway, Canadian Pacific Railway Company, British Columbia - Canyon Creek
+#>    collection
+#> 1         per
+#> 2        NULL
+#> 3        NULL
+#> 4        NULL
+#> 5        NULL
+#> 6        NULL
+#> 7        NULL
+#> 8        NULL
+#> 9        NULL
+#> 10       NULL
 #>                                                                                                                                                                                                                                                                   note
 #> 1  Title from title screen., '"Giving a facility to the means of Travelling for strangers ..."', Issues reproduced: Vol. 4, no. 5 (Sept. 2, 1858), Includes advertising matter., Title from caption., Description based on: Vol. 4, no. 5 (Sept. 2, 1858), v. ; 31 cm.
 #> 2                                                                                                                                                                                                                                Description based on: 1861. TPL,4351.
@@ -462,10 +490,8 @@ Paging
 
 
 ```r
+# FIX ME - paging doesn' work for some reason
 cearch(q="railroads", page=2)$meta
-#> Error in parseJSON(txt): lexical error: invalid char in json text.
-#>                                        <!doctype html> <html id="html"
-#>                      (right here) ------^
 ```
 
 ## Get single item
@@ -505,6 +531,11 @@ item("oocihm.00001")
 #> 
 #> $doc$subject[[4]]
 #> [1] "Canada -- Description and travel -- Early works to 1800."
+#> 
+#> 
+#> $doc$collection
+#> $doc$collection[[1]]
+#> [1] "hfc"
 #> 
 #> 
 #> $doc$note
