@@ -1,5 +1,7 @@
 #' Search Canadiana
 #'
+#' FIX ME - paging doesn' work for some reason
+#'
 #' @export
 #' @import httr jsonlite
 #'
