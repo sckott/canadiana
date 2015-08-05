@@ -4,6 +4,7 @@ canadiana
 
 
 [![Build Status](https://travis-ci.org/sckott/canadiana.svg)](https://travis-ci.org/sckott/canadiana)
+[![codecov.io](https://codecov.io/github/sckott/canadiana/coverage.svg?branch=master)](https://codecov.io/github/sckott/canadiana?branch=master)
 
 `canadiana` is an R client for the Canadiana API
 
