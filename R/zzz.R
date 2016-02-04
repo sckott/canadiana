@@ -5,7 +5,7 @@ makeurl <- function(url, x) if(is.null(x)) paste0(url, "/search") else paste0(ur
 ca_GET <- function(url, args, ...) {
   res <- httr::GET(url, query=args, ...)
   httr::stop_for_status(res)
-  text <- httr::content(res, as = "text")
+  text <- httr::content(res, as = "text", encoding = "UTF-8")
   jsonlite::fromJSON(text, simplifyVector = FALSE, simplifyDataFrame = TRUE)
 }
 
