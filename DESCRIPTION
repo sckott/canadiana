@@ -1,8 +1,7 @@
 Package: canadiana
 Title: Interact with Canadiana data
-Description: Interact with Canadiana data.
-Version: 0.0.1.9200
-Date: 2016-02-03
+Description: Interact with Canadiana (<http://search.canadiana.ca/>) data.
+Version: 0.0.1.9300
 License: MIT + file LICENSE
 URL: https://github.com/sckott/canadiana
 BugReports: https://github.com/sckott/canadiana/issues
